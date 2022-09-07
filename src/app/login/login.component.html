@@ -1,0 +1,68 @@
+<div style="background-color: #D2444D; height: 100vh  !important; ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="live shadow-lg p-3 bg-body rounded ">
+                    <div class="p-3 mb-2 bg-dark text-white rounded-1 text-center fs-2">Admin Login</div>
+                       <p class="text-danger" *ngIf="errorMsg" >{{errorMsg}}</p>
+                       <!-- <p class="text-danger" >{{errorMsg}}</p> -->
+                    <form #f="ngForm" novalidate (ngSubmit)="f.form.valid&& onSubmit(f)">
+                        <div class="mt-3">
+                            <label class="form-label">Username :</label>
+
+                            <input type="text" class="form-control" placeholder="Enter your username..." name="username"
+                                [(ngModel)]="formData.username" #username="ngModel" required minlength="4">
+                            <span class="text-danger" *ngIf="this.submit&&username.errors?.['required']">* Username is
+                                required</span>
+                            <span class="text-danger" *ngIf="this.submit&&username.errors?.['minlength']">* Enter
+                                at-least four characters </span>
+
+                        </div>
+                        <!-- <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                     class="alert">
+                 
+                   <div *ngIf="username.errors?.['required']">
+                     Name is required.
+                   </div></div> -->
+                        <div class="mt-3">
+                            <label class="form-label">Password :</label>
+
+                            <input type="password" class="form-control" placeholder="Enter your Password..."
+                                name="password" [(ngModel)]="formData.password" #password="ngModel" required
+                                >
+
+                            <span class="text-danger" *ngIf="this.submit&&password.errors?.['required']">* Password is
+                                required</span>
+                            <span class="text-danger" *ngIf="this.submit&&password.errors?.['pattern']">* Minimum four
+                                characters, at least one letter and one number</span>
+                        </div>
+                        <button type="submit" class="btn  btn-success mt-4 fs-5 rounded-1 d-flex mx-auto"
+                         (click)="submit=true;" ><i class="fa fa-spinner fa-spin"></i>Login..</button>
+                            
+                    </form>
+
+
+                    <a class="text-nowrap text-dark text-decoration-none fs-6 d-flex justify-content-center mt-2" href="#">Forgot
+                        Password?</a>
+                        
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+    <div class="mt-3">
+        <label class="form-label">Username :</label>
+        <input type="email" class="form-control" placeholder="Enter your username..."
+            formControlName="username">
+        <p style="color:red" *ngIf="fg.controls['username'].errors?.['required']">* Username is
+            required</p>
+            
+    </div> -->
+    <!-- pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$" -->

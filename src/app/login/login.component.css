@@ -1,0 +1,9 @@
+/* style="transform: translateY(50%) !important; */
+@media screen and (min-width: 671px) {
+    .live{
+    transform: translateY(20%) !important;
+    }}
+    @media screen and (min-width: 333px) {
+        .live{
+        transform: translateY(20%) !important;
+        }}

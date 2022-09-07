@@ -1,0 +1,29 @@
+.sidenav1, .sidenav2{
+  height: 100%;
+    position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #D2444D;
+  overflow-x: hidden;
+  transition: 0.5s;
+ }
+.sidewidth{
+    width: 20%;   
+}
+.sidewidth2{
+width: 0;   
+}
+.sidenav1 .closebtn, .sidenav2 .closebtn{
+  position: absolute;
+  top: 0;
+}
+#main1, #main2 {
+transition: margin-left 0.5s;
+}
+#main1{
+    margin-left: 42%;          
+}
+.bg-infos{
+    background-color: #D2444D !important;
+}

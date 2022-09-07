@@ -1,0 +1,25 @@
+{
+  "loginData": [
+    {
+      "username": "bala",
+      "password": "kumar",
+      "id": 1
+    },
+    {
+      "username": "admin",
+      "password": "password",
+      "id": 2
+    }
+    
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
