@@ -1,0 +1,64 @@
+<!-- <app-dashboard></app-dashboard> -->
+
+
+<ng-container>
+
+    <div class="container" >
+
+<form>
+<div class="row">
+        <div class="col-lg-6 col-md-6">
+   
+        <mat-form-field appearance="outline">
+          <mat-label>Enter Category name</mat-label>
+          <input matInput placeholder="Category name" [formControl]="categoryName" required>
+          <mat-error *ngIf="categoryName.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+     
+    </div>
+
+
+    <div class="col">
+        <div class="col-lg-6 col-md-6">
+            <mat-form-field >
+                <div>
+                  <mat-toolbar>
+                    <!-- Display files names -->
+                    <input matInput readonly name="name" placeholder="Select image" [formControl]="categoryImage" required/>
+                    <!-- Browse Button -->
+                    <!-- <button mat-flat-button color="success">Browse</button> -->
+                    <button type="button" class="btn btn-secondary">Browse image</button>
+                  </mat-toolbar>
+                  <!-- Fetch selected filed on change -->
+                  <input
+                    type="file"
+                    #fileInput
+                    id="uploadFile"
+                    (change)="uploadFileEvt($event)"
+                    name="uploadFile"
+                    multiple="multiple"
+                    accept="image/*"
+                  />
+                </div>
+
+                <!-- image preview -->
+                <div class="mt-5">
+                    <div class="row">
+                        <mat-grid-list cols="1" rowHeight="1:1">
+                            <mat-grid-tile  >
+
+                            </mat-grid-tile>
+
+                        </mat-grid-list>
+
+                    </div>
+                </div>
+
+              </mat-form-field>
+        </div>
+    </div>
+</form>
+
+</div>
+</ng-container>

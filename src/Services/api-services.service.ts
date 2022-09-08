@@ -29,8 +29,6 @@ export class ApiServicesService {
 // connectToLoginApi(data:FormData){
 //   return this.http.post(this.getLoginUrl(),data);
 // }
-
-//     Login post 
 getLoginData(data:any){
   return this.http.post(this.baseUrl, data)
 }

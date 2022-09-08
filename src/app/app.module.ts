@@ -11,6 +11,9 @@ import { RouterModule,Routes } from '@angular/router';
 
 import { ProductListComponent } from './Managements/product-list/product-list.component';
 import { ProductAddEditComponent } from './Managements/product-add-edit/product-add-edit.component';
+import { CategoryListComponent } from './Managements/category-list/category-list.component';
+import { CategoryAddEditComponent } from './Managements/category-add-edit/category-add-edit.component';
+import { MaterialModule } from './Material/material.module';
 
 
 
@@ -23,6 +26,8 @@ import { ProductAddEditComponent } from './Managements/product-add-edit/product-
     DashboardComponent,
     ProductListComponent,
     ProductAddEditComponent,
+    CategoryListComponent,
+    CategoryAddEditComponent,
     
   ],
   imports: [
@@ -32,6 +37,7 @@ import { ProductAddEditComponent } from './Managements/product-add-edit/product-
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    MaterialModule,
    
     
    

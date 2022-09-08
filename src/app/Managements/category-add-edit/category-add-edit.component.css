@@ -1,0 +1,42 @@
+
+/* .example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+    margin-top: 100px;
+  } */
+
+  .container{
+border: 2px solid black;
+border-radius: 5px;
+height: 700px;
+
+  }
+  .mat-form-field{
+    width: 100%;
+  }
+
+
+  /* image field style */
+  .mat-form-field {
+    margin: 40px 0;
+    width: 500px !important;
+}
+.mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+}
+.mat-toolbar-single-row button {
+    width: 200px;
+}
+.mat-form-field {
+    width: 100%;
+}
+#uploadFile {
+    top: 0px;
+    left: 0px;
+    width: 100%;    
+    z-index: 9;
+    opacity: 0;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+}
