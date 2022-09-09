@@ -8,7 +8,10 @@ import { MatInputModule } from "@angular/material/input";
 import { MatRippleModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { MatTooltipModule } from "@angular/material/tooltip";
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from "@angular/material/button";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/card";
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatRippleModule,
     MatToolbarModule,
     MatGridListModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule,
   ],
 
   exports:[
@@ -32,6 +38,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatRippleModule,
     MatToolbarModule,
     MatGridListModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule,
   ]
 })
 export class MaterialModule { }

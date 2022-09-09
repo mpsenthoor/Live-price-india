@@ -2,21 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { SafeUrl } from '@angular/platform-browser';
 
 
 
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+export interface Category {
+ categoryName : string,
+ categoryImage : FileHandle[],
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+export interface FileHandle {
+  file:File,
+  url: SafeUrl
+ }
+
+const ELEMENT_DATA: Category[] = [
+ 
 ];
 
 @Component({
@@ -28,7 +30,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class CategoryListComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<Category>(ELEMENT_DATA);
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
 
