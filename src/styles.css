@@ -1,2 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+
+.nav1, .nav2{
+    height: 100%;
+      position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  overflow-x: hidden;
+    transition: 0.5s;
+  }
+  .nav1{
+   width: 20%;
+  }
+  .nav1 .closebtn, .nav2 .closebtn{
+  position: absolute;
+  top:0;
+  }
+  #adjust1{
+    margin-left: 20%;
+  }
+  #adj{
+    margin-left: 23%;
+  }
+  .bg-col{
+      background-color: #D2434D;  
+  }
+  .nav2{
+   width: 0;
+  }
+  #adjust2, #adjust1{
+    transition: margin-left 0.5s;
+  }
+
+
+.borderless-dialog .mat-dialog-container {
+    padding: 0px;
+    overflow: hidden;
+  }
+
+snack-bar-container.success{
+  margin-top: 75px;
+    width: 50px;
+    background-color: green;
+    color: white;
+}
+
+snack-bar-container.notification.simple-snack-bar{
+    font-size: 22px !important;
+    font-weight: bold;
+}

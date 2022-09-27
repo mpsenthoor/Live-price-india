@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           // console.log('getLoginData - ' + JSON.stringify(res));
 
           if (res && res.status == 'success') {              
-            alert("successfully logged in")
+            // alert("successfully logged in")
             this.router.navigate(['/dashboard'])                
             // this.login.setAdminLogin(res);
             localStorage.setItem("admin",JSON.stringify (this.formData.username))

@@ -24,9 +24,11 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": [
   "../Live-price-india/src/assets/js/headside.js"
+
 
             ]
           },

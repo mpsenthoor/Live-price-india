@@ -1,155 +1,116 @@
-<!-- <p>dashboard works!</p> -->
-<div class="p-2 bg-infos fixed-top">
+<!-- desktop view -->
+<div class="d-none d-lg-block sticky-top">
+    <div id="side1" class="nav1 bg-col">
+       <div class="row mt-3">
+           <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 ms-4">
+             <a class="text-decoration-none text-light fs-3 ms-5 text-nowrap"><b> A d m i n</b> </a>  
+           </div>
+             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end">
+                <!--<div class="closebtn text-decoration-none text-light mt-2 text-nowrap me-1" ><i class="bi bi-x fs-1" onclick="close1()" style="cursor:pointer;"></i></div>-->
+           </div>
+       </div>
+       
+        <!-- <div class="text-nowrap mt-3 ms-3">
+           <img src="assets/images/service.jpg" class="img-fluid rounded-circle z-depth-0" style="height: 50px; width: 50px"> 
+               <span class="fs-6 text-light ps-3">Hi Guest</span>
+           </div> -->
+      
+       <!-- <li class="list-unstyled ms-3 mt-4 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">Admin Mangagement </a></li>
+       <hr class="border border-light">
+      <li class="list-unstyled ms-3 mt-3 text-nowrap"><a class="text-decoration-none text-light fs-5" routerLink="productlist">Product Mangagement</a></li>
+         <hr class="border border-light">
+      <li class="list-unstyled ms-3 mt-3 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">Category Management</a></li>
+         <hr class="border border-light">
+      <li class="list-unstyled ms-3 mt-3 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">List Management</a></li>
+         <hr class="border border-light">
+         <a class="ms-3 mt-3 text-nowrap text-light text-decoration-none"><button class="fs-5 bg-transparent border-0 text-white" (click)="onLogout()"><span class="bi bi-box-arrow-right fs-4 me-2"></span>Logout</button></a>
+       <hr class="border border-light"> -->
 
-    <!-- desktop start -->
+       <div class="text-nowrap mt-5">
+    
+        <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
+            routerLink="/dashboard"   > 
+            <i class="bi bi-dropbox"></i> Dashboard
+            </a></li>
+    <hr class="border border-light">
 
-    <div class="d-none d-xl-block">
+    <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
+        routerLink="/categoryList"   >
+        <i class="bi bi-layout-text-sidebar-reverse"></i>  Category
+        Management</a></li>
+<hr class="border border-light">
+
+        <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
+                routerLink="/productList"  >
+                <i class="bi bi-kanban"></i>  Product
+                Management</a></li>
+        <hr class="border border-light">
+
+
+    </div>
+
+
+
+      </div>
+      
+      <div id="adjust1">
+
+       <div class="bg-col  "  style="padding: 10px;">
         <div class="row">
-            <div class="col-xl-6 col-xxl-6">
-                <div id="mysidenav1" class="sidenav1 sidewidth">
-                    <div class="row">
-                        <div class="col-xl-6 col-xxl-6">
-                            <div class="mt-3">
-                                <a class="text-light ms-3 fs-5 text-decoration-none text-nowrap">Mangements</a>
-                            </div>
-
-                        </div>
-                        <div class="col-xl-6 col-xxl-6 d-flex justify-content-end">
-                            <a href="javascript:void(0)" class="closebtn text-light text-decoration-none mt-2"><i
-                                    class="bi bi-x fs-2" onclick="closeNav1()"></i></a>
-                        </div>
-
-                    </div>
-
-                    <div class="text-nowrap mt-5">
-
-                        <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
-                            routerLink="/dashboard">Dashboard
-                            </a></li>
-                    <hr class="border border-light">
-
-                    <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
-                        routerLink="/categoryList">Category
-                        Management</a></li>
-                <hr class="border border-light">
-
-                        <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
-                                routerLink="/productList">Product
-                                Management</a></li>
-                        <hr class="border border-light">
-
-
-                    </div>
-
-
-                </div>
-                <div id="main1" class="mt-2">
-                    <span><i class="bi bi-list fs-4 text-light" onclick="openNav1()" style="cursor:pointer;"></i><span
-                            class="ms-3 fs-5 text-light">Admin Panel</span></span>
-                </div>
-            </div>
-            <div class="col-xl-6 col-xxl-6 d-flex justify-content-end">
-                <div class="row">
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                        <div class="text-nowrap mt-1">
-                            <!-- <img src="images/service.jpg" class="img-fluid rounded-circle z-depth-0"
-                                style="height: 50px; width: 50px"> -->
-                            <span class="fs-6 text-light ps-3">Hi Guest</span>
-                        </div>
-
-                    </div>
-                    <div class="col-xl-6 col-xxl-6 d-flex justify-content-end">
-                        <div class="mt-2 me-2">
-                            <button (click)="onLogout()"> Logout </button>
-                        </div>
-
-                    </div>
-                </div>
-
+        <div class="col-xl-6 col-xxl-6  "></div>
+        <div class="col-xl-6 col-xxl-6 d-flex justify-content-end">
+            <div class="mt-2 me-2">
+                <button class="fs-5 bg-transparent border-0 text-white" (click)="onLogout()"><span class="bi bi-box-arrow-right fs-4 me-2"></span> Logout </button>
             </div>
         </div>
-    </div>
-
-
-    <!-- desktop end -->
-
-
-
-
-
-    <!-- responsive start -->
-    <div class="d-block d-xl-none">
-        <div id="mySidenav2" class="sidenav2 sidewidth2">
-            <div class="row">
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                    <div class="mt-2">
-                        <a class="text-light ms-3 fs-5 text-decoration-none text-nowrap">Mangements</a>
-                    </div>
-
-                </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex justify-content-end">
-                    <a href="javascript:void(0)" class="closebtn text-light text-decoration-none mt-1"><i
-                            class="bi bi-x fs-2" onclick="closeNav2()"></i></a>
-                </div>
-
-
-                <!-- <div class="text-nowrap mt-3 ms-2">
-                    <img src="images/service.jpg" class="img-fluid rounded-circle z-depth-0" style="height: 50px; width: 50px"> 
-                    <span class="fs-6 text-light ps-3">Hi Guest</span>
-                </div> -->
-
-                <div class="text-nowrap mt-3">
-                    
-                    <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none"
-                        routerLink="/dashboard">
-                        Dashboard</a></li>
-                <hr class="border border-light">
-
-                <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none" 
-                    routerLink="/categoryList">Category
-                    Management</a></li>
-            <hr class="border border-light">
-
-                    <li class="list-unstyled ms-3"><a class="text-light fs-5 text-decoration-none">Product
-                            Management</a></li>
-                    <hr class="border border-light">
-
-
-
-
-                </div>
-
-
-                <div class="ms-3 mt-1">
-                    <!-- <span class="text-light"><i class="bi bi-box-arrow-right pe-2 fs-4"></i><span
-                            class="fs-5">Logout</span></span> -->
-
-                    <button (click)="onLogout()"> Logout </button>
-                </div>
-
-            </div>
-
 
         </div>
-
-        <div id="main2">
-            <span class="text-nowrap"><i class="bi bi-list fs-4 text-light" onclick="openNav2()"
-                    style="cursor:pointer;"></i><span class="ms-3 fs-5 text-light">Admin Panel</span></span>
-        </div>
-
-
-
-
-
-
-
-    </div>
-    <!-- responsive end -->
-
-
-</div>
-
-
-
-<!-- <span class="text-light"><i class="bi bi-box-arrow-right pe-2 fs-4"></i><span
-    class="fs-5" (click)="logout()" >Logout</span></span> -->
+          <!-- <span><i class="bi bi-list fs-3 text-light" onclick="open1()" style="cursor:pointer;"></i><span class="text-light fs-4 ms-3">Admin Panel</span></span>   -->
+       </div>
+      </div>
+  </div>
+   
+ 
+    <!-- desktop view -->
+  
+    <!-- responsive view -->
+   <div class="d-block d-lg-none sticky-top">
+       <div id="side2" class="nav2 bg-col">
+           <div class="row mt-3">
+      <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <a class="text-decoration-none text-light fs-4 ms-3 text-nowrap">Mangements</a>  
+      </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end">
+           <div class="closebtn text-decoration-none text-light mt-2 text-nowrap me-1" ><i class="bi bi-x fs-1" onclick="close2()" style="cursor:pointer;"></i></div>
+      </div>
+  </div>
+  
+   <div class="text-nowrap mt-3 ms-3">
+      <img src="assets/images/service.jpg" class="img-fluid rounded-circle z-depth-0" style="height: 50px; width: 50px"> 
+          <span class="fs-6 text-light ps-3">Hi Guest</span>
+      </div>
+ 
+  <li class="list-unstyled ms-3 mt-4 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">Admin Mangagement </a></li>
+  <hr class="border border-light">
+ <li class="list-unstyled ms-3 mt-3 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">Product Mangagement</a></li>
+    <hr class="border border-light">
+ <li class="list-unstyled ms-3 mt-3 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">Category Management</a></li>
+    <hr class="border border-light">
+ <li class="list-unstyled ms-3 mt-3 text-nowrap"><a class="text-decoration-none text-light fs-5" href="#">List Management</a></li>
+    <hr class="border border-light">
+    <a class="ms-3 mt-3 text-nowrap text-light text-decoration-none"><button class="fs-5 bg-transparent border-0 text-white" (click)="onLogout()"><span class="bi bi-box-arrow-right fs-4 me-2"></span>Logout</button> </a>
+    
+    <hr class="border border-light">
+ 
+ </div>
+ 
+ <!-- <div id="adjust2">
+   <div class="bg-col p-3">
+ <span><i class="bi bi-list fs-3 text-light" onclick="open2()" style="cursor:pointer;"></i><span class="text-light fs-4 ms-3">Admin Panel</span></span>
+  </div>
+ </div> -->
+ 
+       
+  </div>
+    <!-- responsive view -->
+ 

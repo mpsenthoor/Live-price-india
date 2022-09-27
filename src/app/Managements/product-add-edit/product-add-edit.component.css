@@ -1,0 +1,79 @@
+/*  toolbar
+.page{
+    color: white;
+    padding:0 1rem ;
+    background: olivedrab;
+}
+
+.page_box{
+    min-height: 120px;
+    background-color: rgb(134, 101, 101);
+    margin: 0 -1rem;
+    font-size: 35px;
+}
+  
+.page_content{
+    min-height: calc(100vh- 178px);
+    border-radius: 10px;
+    margin-top: 2rem;
+    background: white;
+    color: black;
+    font-size: 2rem;
+}
+.page_data{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.container{
+    /* border: 2px solid black;
+    border-radius: 5px; */
+    /* height: 700px; */
+    margin-top: 100px;
+    
+      }
+      .mat-form-field{
+        width: 100%;
+      }
+    
+    /*   Image-preview  Field */
+    
+      mat-grid-tile{
+        border: 1px solid  grey;
+      
+      }
+    
+      .btn-remove-image{
+    position: absolute;
+    cursor: pointer;
+    top: -15px;
+    right: -7px;
+    background-color: red;
+    color: white;
+    border-radius: 55%;
+    width: 20px;
+    height: auto;
+    text-align: center;
+      }
+    
+      .btn-selected-image{
+        position: absolute;
+        cursor: pointer;
+        top: -15px;
+        right: -7px;
+        background-color: red;
+        color: white;
+        border-radius: 55%;
+        width: 20px;
+        height: auto;
+        text-align: center;
+          }
+
+          /* .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+            color: white;
+        }
+
+        :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+          color:#D2434D;
+      } */

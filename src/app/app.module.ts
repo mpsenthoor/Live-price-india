@@ -14,6 +14,7 @@ import { ProductAddEditComponent } from './Managements/product-add-edit/product-
 import { CategoryListComponent } from './Managements/category-list/category-list.component';
 import { CategoryAddEditComponent } from './Managements/category-add-edit/category-add-edit.component';
 import { MaterialModule } from './Material/material.module';
+import { ProductPriceComponent } from './Managements/product-price/product-price.component';
 
 
 
@@ -28,6 +29,8 @@ import { MaterialModule } from './Material/material.module';
     ProductAddEditComponent,
     CategoryListComponent,
     CategoryAddEditComponent,
+    ProductPriceComponent,
+   
     
   ],
   imports: [

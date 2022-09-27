@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Category } from '../Managements/category-list/category-list.component';
+
 
 
 @Injectable({
@@ -19,9 +19,12 @@ export class ApiServicesService {
 
   //    Category Post Api    //
 
-  addToCategoryApi(category: FormData) {
-    return this.http.post<Category>(this.jsonUrl, category)
-  }
+ addCategoryToApi(data:FormData){
+ return this.http.post(this.baseUrl, data)
+ }
+
+
+
 
 
   //    Login post  Api    //
@@ -31,26 +34,30 @@ export class ApiServicesService {
   }
 
 
+  //  Product Post Api  //
 
+
+  addProductToApi(data:FormData){
+    return this.http.post(this.baseUrl, data)
+  }
+
+  
+
+  //  Product list Api //
+
+  getProductList(data:any){
+    return this.http.post(this.baseUrl,data)
+  }
 
 
 }
 
 
 
+    // Category Get     //
+
+    // getAllCategory(data:any){
+    //   return this.http.post<Category[]>(this.baseUrl,data)
+    // }
 
 
-// getUrl(url : any){
-//   return this.baseUrl+url+'/';
-// }
-
-
-
-// getLoginUrl(){
-//   return this.getUrl("login.php")
-// }
-
-
-// connectToLoginApi(data:FormData){
-//   return this.http.post(this.getLoginUrl(),data);
-// }

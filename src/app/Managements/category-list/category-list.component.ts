@@ -2,24 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import { SafeUrl } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { NotificationsService } from 'src/app/Notification/notifications.service';
+import { ApiServicesService } from 'src/app/Services/api-services.service';
 
 
 
-
-export interface Category {
- categoryName : string,
- categoryImage : FileHandle[],
+export interface CategoryDataForm {
+  
+  position : number;
+  categoryName : string;
+  categoryImage : string;
+  categoryStatus : number;
 }
 
-export interface FileHandle {
-  file:File,
-  url: SafeUrl
- }
-
-const ELEMENT_DATA: Category[] = [
- 
-];
+const categoryList: CategoryDataForm[] = []
 
 @Component({
   selector: 'app-category-list',
@@ -29,21 +26,76 @@ const ELEMENT_DATA: Category[] = [
 
 export class CategoryListComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<Category>(ELEMENT_DATA);
 
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
+  displayedColumns: string[] = [ 'categoryName', 'categoryStatus', 'categoryImage','Edit', 'Delete'];
+  dataSource = new MatTableDataSource<CategoryDataForm>(categoryList);
+
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
 
   ngAfterViewInit() {
-    // this.dataSource.paginator = this.paginator;
+    this.dataSource.paginator = this.paginator;
   }
 
-  constructor() {
 
-  
-   }
+  constructor(
+    private apiService : ApiServicesService,
+    private router : Router,
+    private notification : NotificationsService 
+  ){}
+
+categoryList:any
+
+imagePath:string="http://geserve-pc-3/livepriceindia/notes/"
 
   ngOnInit(): void {
+   this. getAllCategoryList()
+  }
+
+  moveToCategoryForm(){
+    this.router.navigate(['category'])
+  }
+
+  getAllCategoryList(){
+    var formData = new FormData();
+    formData.append("action", "getCategoryList");
+    this.apiService.addCategoryToApi(formData).subscribe(
+      (res:any)=>{
+        console.log(res);
+        this.categoryList=res
+        this.dataSource.data=res
+      }
+    )
+  }
+
+
+  deleteCategory(categoryId:any){
+    
+    var formData = new FormData();
+    formData.append("action", "deleteCategory")
+    formData.append("category_id",categoryId)
+
+    this.apiService.addCategoryToApi(formData).subscribe(
+      (res:any)=>{
+        console.log(res)
+        this.categoryList=res;
+        this.dataSource.data=res;
+        
+        alert("Are you sure want to remove this category")
+        location.reload();
+
+this.notification.success('! Category deleted successfully')
+      }
+    )
+  }
+
+
+  connectToCategoryEdit( type:any, category_id:any){
+   this.router.navigate(['category'],{state:{action:type, id: category_id}})
   }
 
 }
+
+
+

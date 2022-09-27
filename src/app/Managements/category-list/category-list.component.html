@@ -1,39 +1,90 @@
+
 <app-dashboard></app-dashboard>
+<div id="adjust1"  style="margin-top: 3% !important;">
+<ng-container   >
+<div class="container mt-4" >
 
 
-<div class="mat-elevation-z8">
-  <!-- <table mat-table [dataSource]="dataSource">         -->
+    <div class="row">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end">
+            <button mat-raised-button color="primary" (click)="moveToCategoryForm()" >Add Category</button>
+          </div>
+    </div>
+
+<!-- Category List Table -->
+
+    <div class="mat-elevation-z8 mt-3">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <!-- <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.category_id}} </td>
+          </ng-container> -->
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="categoryName">
+            <th mat-header-cell *matHeaderCellDef> Category Name </th>
+            <td mat-cell *matCellDef="let element"><p style="text-transform:capitalize ;font-size: 18px;"> {{element.categoryName}} </p></td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="categoryStatus">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.categoryStatus}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="categoryImage">
+            <th mat-header-cell *matHeaderCellDef> Image </th>
+            <td mat-cell *matCellDef="let element"> 
+            <img src="{{imagePath+element.categoryImage}}" alt=""  height="50" width="50">  
+            </td>
+          </ng-container>
+
+
+             <!-- Edit button Column -->
+    <ng-container matColumnDef="Edit"style="width: 10%;">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element">
+
+    <button mat-icon-button color="primary"  (click)="connectToCategoryEdit('editCategory',element.category_id)">
+      <mat-icon > edit</mat-icon>
+    
+    </button>
+      </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <!-- Delete button Column -->
+    <ng-container matColumnDef="Delete"style="width: 10%;">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-icon-button color="warn"  (click)="deleteCategory(element.category_id)"   >
+          <mat-icon> delete</mat-icon>
+        
+        </button>
+      
+      </td>
     </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons 
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+      
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  <!-- </table> -->
-
-  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
-       aria-label="Select page of periodic elements">
-  </mat-paginator> -->
 </div>
 
+</ng-container>
+
+</div>

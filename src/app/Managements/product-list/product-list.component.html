@@ -1,8 +1,128 @@
 
+<!-- <app-dashboard></app-dashboard> -->
 <app-dashboard></app-dashboard>
-<div class="container-fluid"> 
-<p>product-list works!</p>
-<button [routerLink]="['/product']" >Add product</button>
-<p>93
- I recently started implementing lazy loading in my application. I was wondering whether there is any way to create a routing.module.ts while generating a new module in angular-cli application other than creating it manually?So basically, there's no separate command to create routing.module file. But, that can be created while on the creation of the module:</p>
+<div id="adjust1">
+
+<ng-container >
+<div class="container mt-4"   >
+
+
+    <div class="row">
+
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+
+        </div>
+
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end">
+            <button mat-raised-button color="primary" (click)="moveToProductForm()" >Add Product</button>
+          </div>
+    </div>
+
+<div class="mat-elevation-z8 mt-3">
+    <table mat-table [dataSource]="dataSource">
+  
+      <!-- ProductId Column -->
+      <!-- <ng-container matColumnDef="ProductId" style="width: 10%";>
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.ProductId}} </td>
+      </ng-container> -->
+  
+      <!-- categoryName Column -->
+      <!-- <ng-container matColumnDef="categoryName" style="width: 10%">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let element"><p style="text-transform:capitalize ;font-size: 18px;"> {{element.categoryName}}</p> </td>
+      </ng-container> -->
+  
+      <!-- ProductName Column -->
+      <ng-container matColumnDef="productName" style="width: 10%">
+        <th mat-header-cell *matHeaderCellDef> Product Name </th>
+        <td mat-cell *matCellDef="let element"> <p style="text-transform:capitalize ;font-size: 18px;">{{element.ProductName }} </p> </td>
+      </ng-container>
+  
+      <!-- ProductStatus Column -->
+      <ng-container matColumnDef="productStatus" style="width: 10%">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.ProductStatus}} </td>
+      </ng-container>
+
+      <!-- Product Price Column -->
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        <!-- |currency:"INR":"symbol" -->
+      </ng-container>
+
+
+<!-- Product Date Column -->
+
+<ng-container matColumnDef="date">
+  <th mat-header-cell *matHeaderCellDef> Date </th>
+  <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+</ng-container>
+
+
+<!-- Product Add Price Column -->
+<ng-container matColumnDef="addPrice"style="width: 10%;">
+  <th mat-header-cell *matHeaderCellDef> Add Price </th>
+  <td mat-cell *matCellDef="let element">
+
+<button class="btn btn-outline-success btn-sm"  (click)="openPriceDialog()" >
+<i class="bi bi-currency-rupee"></i>
+Add Price
+</button>
+  </td>
+  
+</ng-container>
+
+
+<!-- Product Image Column -->
+
+      <ng-container matColumnDef="productImage" style="width: 10%;">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let element"> 
+          <img src={{imagePath+element.ProductImage}} alt="" height="50" width="50">
+         </td>
+      </ng-container>
+
+
+      <!-- Edit button Column -->
+    <ng-container matColumnDef="Edit"style="width: 10%;">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element">
+
+    <button mat-icon-button color="primary" (click)="connectToProductEdit('editProduct',element.ProductId)" >
+      <mat-icon > edit</mat-icon>
+    
+    </button>
+      </td>
+    </ng-container>
+
+<!-- Delete button Column -->
+    <ng-container matColumnDef="Delete"style="width: 10%;">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-icon-button color="warn" (click)="deleteProduct(element.ProductId)"  >
+          <mat-icon> delete</mat-icon>
+        
+        </button>
+      
+      </td>
+    </ng-container>
+
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons 
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  
+</div>
+
+</ng-container>
+
 </div>
