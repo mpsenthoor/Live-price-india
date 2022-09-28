@@ -1,162 +1,217 @@
-<!-- <app-dashboard></app-dashboard> -->
-
 <app-dashboard></app-dashboard>
+
 <div id="adjust1">
 
-<ng-container >
-  
-
-  <div class="container mt-6 p-1  " style="background-image: linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%);; width: 40%; border-radius: 8px;">
-
-    <div class="card w-40 p-5">
-
-      <form  [formGroup]="productForm"    >
-        <div class="row">
-          <!-- <div class="col-ld-6"> </div> -->
-
-          <div class="col-6">
-
-            <!--   Category Name -->
-
-            <mat-form-field appearance="outline">
-              <mat-label>Category name:</mat-label>
-              <mat-select formControlName="categoryName">
-                <mat-option>None</mat-option>
-                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-            <!-- <span class="text-danger" >
-Category name is required
-            </span> -->
 
 
-            <!--  Product Name -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-3">
 
-            <div class="example-container">
-              <mat-label>Product Name</mat-label>
-              <mat-form-field appearance="outline" class="w-60">
-               
-                <input matInput formControlName="productName"
-                 type="text" placeholder="pat@example.com" required
-                
-                 >
-                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-              </mat-form-field>
+      </div>
 
-             
+      <div class="col-md-8">
 
-              <span class="text-danger" *ngIf=" (productForm.get('productName')?.touched || submitted) && productForm.get('productName')?.errors?.['required']" >
-                <!-- <span *ngIf="productForm.controls['productName'].errors?.['required']" > -->
-                <!-- <span class="text-danger"  *ngIf="submitted && productForm.get('productName')?.errors?.['required']"> -->
-* Product  name is required
-            </span>
+
+        <!-- Title-Bar field -->
+        <div class="p-2 text-white text-center title-bar">
+          <span class="fs-4">Product Form</span>
+
+        </div>
+
+
+
+
+
+
+        <form [formGroup]="productForm" class="mt-2">
+
+
+          <!--  Category Name field-->
+          <div class="row">
+            <div class="col-md-4 text-dark input-title">
+              <label for="exampleFormControlInput1" class="form-label fs-5 ps-3 pt-4">Category Name:</label>
             </div>
+            <div class="col-md-6 input-field">
+              <div class="mt-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>Category name:</mat-label>
+                  <mat-select formControlName="categoryName">
 
+                    <mat-option>Category name</mat-option>
+                    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
 
-            <!-- Product Status -->
-
-<div class="form-check">
-
-  <input class="form-check-input" type="checkbox" formControlName="active" value="" id="active" >
-
-  <label class="form-text" for="active">
-    Active
-</label>
-</div>
-
-
-            <!-- Button Field   cmt -->
-
-           
-
-          
-
-
-
-          <!-- Image Field -->
-
-          <!-- <div class="col-6"> -->
-            <!-- <p>Image space </p> -->
-
-            <div>
-              <button class="btn btn-primary btn-sm ">
-                <input type="file" #fileInput id="uploadFile" (change)="uploadImage($event)" name="uploadFile"
-                  multiple="multiple" accept="image/*"   />
-
-              </button>
-
-            </div>
-
-            <!-- category image flow -->
-            <!-- <div>
-              <button class="btn btn-primary btn-sm ">
-                <input type="file" multiple value="select" #selectImage (change)="onImageSelected($event)" />
-  
-              </button>
-  
-            </div>  -->
-
-            <!--    Image Preview Field  cmt -->
-            <div class="mt-5">
-
-              <div class="row">
-
-                <mat-grid-list cols="4" rowHeight="1:1">
-                  <mat-grid-tile>
-                    <div style="position:relative">
-
-                      <span class="btn-remove-image" *ngIf="(imageSrc)" (click)="removeImages()"> x </span>
-                      <img src="{{imageSrc}}" width="90px" height="90px" *ngIf="(imageSrc)">
-
-                      <!-- <span class="btn-remove-image" (click)="removeImages()"> x </span>
-                      <img src="{{imageSrc}}" width="90px" height="90px"> -->
-
-                      <!-- <span class="btn-remove-image"  (click)="removeImages()" > x </span>
-                      <img [src]="file.url" width="90px" height="90px" > -->
-                      <span class="btn-selected-image" *ngIf="(formType == 'editProduct')"
-                        (click)="removeSelectedImage()"> x </span>
-                      <img src="{{imagePath+editImage}}" width="90px" height="90px" *ngIf="(formType == 'editProduct')">
-
-                    </div>
-
-                  </mat-grid-tile>
-
-                </mat-grid-list>
+                  </mat-select>
+                </mat-form-field>
 
               </div>
-            </div>
 
-
-            <div class="mt-5" align="end">
-
-              <button type="button" class="btn btn-primary float-start " (click)="backToList()">Back to list</button>
-
-              <!-- <button type="submit" class="btn btn-success " (click)="addProduct()" >Add Product</button> -->
-
-
-              <ng-container *ngIf="formType == 'editProduct';  else addButton">
-                <button type="submit" class="btn btn-success "  (click)=" addProduct()"  >Update Product</button>
-
-              </ng-container>
-
-              <ng-template #addButton>
-                <button type="submit" class="btn btn-success " (click)=" productForm.valid && addProduct()"  >Add Product</button>
-
-              </ng-template>
 
             </div>
-
 
           </div>
 
 
-        </div>
+<!-- Product Name field -->
+          <div class="row">
+            <div class="col-md-4 text-dark input-title">
+              <label for="exampleFormControlInput1" class="form-label fs-5 ps-3 pt-3">Product Name:</label>
 
-      </form>
+            </div>
+            <div class="col-md-6 input-field">
+              <div class="mt-2">
+                <mat-form-field appearance="fill">
+                  <mat-label>Product Name:</mat-label>
+                  <input matInput type="text" formControlName="productName" placeholder=" " class="" required>
+
+
+                </mat-form-field>
+
+                <span class="text-danger"
+                  *ngIf=" (productForm.get('productName')?.touched || submitted) && productForm.get('productName')?.errors?.['required']">
+                  <!-- <span *ngIf="productForm.controls['productName'].errors?.['required']" > -->
+                  <!-- <span class="text-danger"  *ngIf="submitted && productForm.get('productName')?.errors?.['required']"> -->
+                  *Product name is required
+                </span>
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- Product Status field -->
+          <div class="row">
+            <div class="col-md-4 text-dark input-title">
+              <label for="exampleFormControlInput1" class="form-label fs-5 ps-3 mt-1">Status:</label>
+            </div>
+            <div class="col-md-6 input-field">
+
+              <div class="form-check mt-2">
+
+                <p><input class="form-check-input" type="checkbox" formControlName="active" value="" id="active"><span
+                    class="fs-6 ms-1 fw1">Active</span></p>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+<!--  Upload Image field-->
+          <div class="row">
+            <div class="col-md-4 text-dark input-title">
+              <label for="exampleFormControlInput1" class="form-label fs-5 mt-2 p-3">Upload Image:</label>
+
+            </div>
+            <div class="col-md-6 input-field">
+              <button class="btn btn-primary btn-sm mt-4">
+                <input type="file" #fileInput id="uploadFile" (change)="uploadImage($event)" name="uploadFile"
+                  multiple="multiple" accept="image/*" />
+
+              </button>
+
+
+            </div>
+
+          </div>
+
+
+          <!-- Image Preview Field -->
+          <div class="row mt-0">
+            <div class="col-md-4  input-title">
+
+            </div>
+            <div class="col-md-6 input-field">
+
+              <!-- Image Preview Field -->
+              <div class="mt-3">
+                <div class="row">
+
+                  <mat-grid-list cols="4" rowHeight="1:1">
+
+                    <div class="card rounded-0 " style="width: 7rem; height: 7rem;">
+                      <div class="card-body p-2">
+
+                        <span class="btn-remove-image" *ngIf="(imageSrc)" (click)="removeImages()">
+                          x</span>
+                        <img src="{{imageSrc}}" height="90px" width="90px" *ngIf="(imageSrc)">
+
+                        <span class="btn-selected-image" *ngIf="(formType == 'editProduct')"
+                          (click)="removeSelectedImage()"> x</span>
+                        <img src="{{imagePath+editImage}}" alt="" *ngIf="(formType == 'editProduct')" width="90px"
+                          height="90px">
+                      </div>
+                    </div>
+
+                  </mat-grid-list>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+<!--  Button field -->
+
+          <div class="row">
+            <div class="col-md-4 input-title">
+
+
+
+            </div>
+            <div class="col-md-6  input-field">
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="button" class="btn btn-primary text-nowrap mt-3 mb-3" (click)="backToList()">Back to
+                    list</button>
+
+
+                </div>
+                <div class="col-md-6 d-flex justify-content-end">
+                  <ng-template #addButton>
+
+                    <!-- <button type="submit" class="btn btn-success " (click)="addCategory() ">Add
+                           Category</button> -->
+                    <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addProduct()">Add
+                      product</button>
+
+                  </ng-template>
+
+                  <ng-container *ngIf="formType == 'editProduct';  else addButton">
+                    <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addProduct()">Update
+                      Product</button>
+
+                  </ng-container>
+
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+
+
+        </form>
+
+      </div>
+
+
     </div>
+
+
   </div>
 
 
-</ng-container>
 
 </div>

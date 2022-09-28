@@ -15,6 +15,7 @@ import { CategoryListComponent } from './Managements/category-list/category-list
 import { CategoryAddEditComponent } from './Managements/category-add-edit/category-add-edit.component';
 import { MaterialModule } from './Material/material.module';
 import { ProductPriceComponent } from './Managements/product-price/product-price.component';
+import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 
 
 
@@ -30,6 +31,7 @@ import { ProductPriceComponent } from './Managements/product-price/product-price
     CategoryListComponent,
     CategoryAddEditComponent,
     ProductPriceComponent,
+    ConfirmDeleteComponent,
    
     
   ],

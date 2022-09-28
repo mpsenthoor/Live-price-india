@@ -3,6 +3,7 @@ import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { Router } from '@angular/router';
+import { DeleteServiceService } from 'src/app/Delete-service/delete-service.service';
 import { NotificationsService } from 'src/app/Notification/notifications.service';
 import { ApiServicesService } from 'src/app/Services/api-services.service';
 
@@ -42,7 +43,8 @@ export class CategoryListComponent implements OnInit {
   constructor(
     private apiService : ApiServicesService,
     private router : Router,
-    private notification : NotificationsService 
+    private notification : NotificationsService,
+    private deleteService : DeleteServiceService, 
   ){}
 
 categoryList:any
@@ -68,6 +70,12 @@ imagePath:string="http://geserve-pc-3/livepriceindia/notes/"
       }
     )
   }
+
+
+  openConfirmDialog(id:any){
+    this.deleteService.openConfirmDialog().afterClosed().subscribe()
+  }
+
 
 
   deleteCategory(categoryId:any){

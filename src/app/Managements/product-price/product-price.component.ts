@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ApiServicesService } from 'src/app/Services/api-services.service';
 import { ProductListComponent } from '../product-list/product-list.component';
 
@@ -16,6 +17,7 @@ export class ProductPriceComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router : Router,
     private apiService : ApiServicesService,
     public dialogRef : MatDialogRef<ProductListComponent>
     
@@ -46,6 +48,8 @@ addPrice(productId:any){
   this.apiService.addProductPriceToApi(formData).subscribe(
     (res:any)=>{
       console.log(res)
+
+      this.dialogRef.close();
     }
   )
 }

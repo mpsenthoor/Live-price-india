@@ -1,199 +1,189 @@
 <app-dashboard></app-dashboard>
 
-
 <div id="adjust1">
-    <ng-container >
-        <div class="container mt-6 p-1" style="background-color: #3f51b5; width: 65%; border-radius: 8px;">
-            <div class="card  w-80 p-5">
-                <form    [formGroup]="categoryForm">
-    
+
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+
+            <div class="col-md-8">
+              <div class="p-2 text-white text-center title-bar">
+                            <span class="fs-4">Category Form</span>
+        
+                        </div>
+
+
+              
+                
+
+
+                <form  [formGroup]="categoryForm" class="mt-2">
+
                     <div class="row">
-                        <div class="col-6">
-    
-                            <!-- Category Name Field -->
-    
-                            <div class="example-container">
-                                <mat-form-field appearance="fill" class="w-60">
-                                    <mat-label>Category Name</mat-label>
-                                    <input matInput type="text" formControlName="categoryName" placeholder="Category Name"
-                                    required
-                                    
-                                    >
+                        <div class="col-md-4 text-dark input-title">
+                            <label for="exampleFormControlInput1" class="form-label fs-5 ps-3 pt-4">Category Name:</label>
+        
+                        </div>
+                        <div class="col-md-6 input-field">
+                            <div class="mt-3">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Category Name:</mat-label>
+                                    <input matInput type="text" formControlName="categoryName" placeholder=" " class=""
+                                    required>
                                       
                                     
                                 </mat-form-field>
-                               <!-- <div *ngIf="f['categoryName'].errors?.['required']" >
-    
-                               </div> -->
+
                             </div>
-    
-                            <!-- Category Status Field  -->
-    
-    
-                            <div class="form-check">
-    
-                                <input class="form-check-input" type="checkbox" formControlName="active" value="" id="active" >
-                              
-                                <label class="form-text" for="active">
-                                  Active
-                              </label>
-                              </div>
-    
-    
-                            <!-- Button Field -->
-    
-                            <div class="mt-5 " align="end">
-    
-                                <button type="button" class="btn btn-primary float-start " (click)="backToList()">Back to
-                                    list</button>
-    
-                                <!-- <button type="submit" class="btn btn-success " (click)="addCategory() ">Add
-                                    Category</button> -->
-    
-                                <ng-container *ngIf="formType == 'editCategory';  else addButton">
-                                    <button type="submit" class="btn btn-success " (click)="addCategory()">Update
-                                        Category</button>
-    
-                                </ng-container>
-    
-                                <ng-template #addButton>
-                                    <button type="submit" class="btn btn-success " (click)="addCategory()">Add
-                                        Category</button>
-    
-                                </ng-template>
-    
-                            </div>
-    
+                          
                         </div>
-    
-                        <div class="col-6">
-    
-                            <!--  Category Image Field -->
-    
-                            <div>
-                                <button class="btn btn-primary btn-sm ">
-                                    <input type="file" #fileInput id="uploadFile" (change)="uploadImage($event)"
-                                        name="uploadFile" multiple="multiple" accept="image/*" />
-    
-                                </button>
-    
+                    </div>
+        
+        
+                    <div class="row">
+                        <div class="col-md-4 text-dark input-title">
+                            <label for="exampleFormControlInput1" class="form-label fs-5 ps-3 mt-1">Status:</label>
                             </div>
-    
+                            <div class="col-md-6 input-field">
+                                
+                            <div class="form-check mt-2">
+        
+                                <p><input class="form-check-input" type="checkbox" formControlName="active" value="" id="active"><span class="fs-6 ms-1 fw1">Active</span></p>
+                              
+                               
+                              </div>
+        
+                            </div>
+        
+                    </div>
+        
+        
+        
+        
+                    <div class="row">
+                        <div class="col-md-4 text-dark input-title" >
+                            <label for="exampleFormControlInput1" class="form-label fs-5 mt-2 p-3">Upload Image:</label>
+        
+                        </div>
+                        <div class="col-md-6 input-field" >
+                            <button class="btn btn-primary btn-sm mt-4">
+                                <input type="file" #fileInput id="uploadFile" (change)="uploadImage($event)"
+                                    name="uploadFile" multiple="multiple" accept="image/*" />
+        
+                            </button>
+        
+        
+                        </div>
+        
+                    </div>
+        
+                    <div class="row mt-0">
+                        <div class="col-md-4  input-title" >
+        
+                        </div>
+                        <div class="col-md-6 input-field" >
+        
                             <!-- Image Preview Field -->
-                            <div class="mt-5">
+                            <div class="mt-3">
                                 <div class="row">
-    
+        
                                     <mat-grid-list cols="4" rowHeight="1:1">
-                                        <mat-grid-tile>
-    
+                                     
+                                        <div class="card rounded-0 " style="width: 7rem; height: 7rem;">
+                                            <div class="card-body p-2">
+        
                                             <span class="btn-remove-image" *ngIf="(imageSource)" (click)="removeImage()">
                                                 x</span>
                                             <img src="{{imageSource}}" height="90px" width="90px" *ngIf="(imageSource)">
-    
+        
                                             <span class="btn-selected-image" *ngIf="(formType == 'editCategory')"
                                                 (click)="removeSelectedImage()"> x</span>
                                             <img src="{{imagePath+editImage}}" alt="" *ngIf="(formType == 'editCategory')"
                                                 width="90px" height="90px">
-    
-                                        </mat-grid-tile>
-    
-                                    </mat-grid-list>
-    
-                                </div>
-    
-                            </div>
-    
-                        </div>
-    
-                    </div>
-                </form>
-    
-            </div>
         </div>
-    
-    </ng-container>
+                                       </div>
+        
+                                    </mat-grid-list>
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+        
+                        </div>
+        
+        
+        
+                        <div class="row">
+                            <div class="col-md-4 input-title">
+        
+                               
+        
+                            </div>
+                            <div class="col-md-6  input-field" >
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary text-nowrap mt-3 mb-3" (click)="backToList()">Back to
+                                            list</button>
+                                
+        
+                                        </div>
+                                        <div class="col-md-6 d-flex justify-content-end">
+                                            <ng-template #addButton>
+        
+                                                <!-- <button type="submit" class="btn btn-success " (click)="addCategory() ">Add
+                               Category</button> -->
+                                               <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addCategory()">Add
+                                                   Category</button>
+                                   
+                                           </ng-template>
+                   
+                                           <ng-container *ngIf="formType == 'editCategory';  else addButton">
+                                               <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addCategory()">Update
+                                                   Category</button>
+                                   
+                                           </ng-container>
+        
+                                        </div>
+        
+                                </div>
+        
+        
+        
+                            </div>
+        
+                        </div>
+            
+                   
+                    
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
     
     </div>
 
 
 
 
+     
 
+        
+       
 
-<!-- updated -->
+       
 
-<!-- <app-dashboard></app-dashboard>
-<div id="adjust1">
-   
-    <div class="container" style="height: 50%;">
-
-        <div class="row">
-            <div class="col-md-2">
-
-            </div>
-            <div class="col-md-8"> 
-                 <div class="card rounded-2 text-nowrap p-2">
-                    <div class=" p-2"> 
-
-                         <div class="row">
-                            <div class="input-title col-md-2 pt-4">
-                                <mat-label class=" fs-5">Category Name:</mat-label>
-                            </div>
-                            <div class="input-field  col-md-10">
-                                <mat-form-field appearance="outline">
-                                    <input type="text" class="form-control ms-5" 
-                                        placeholder="Category Name" formControlName="categoryName">
-                                </mat-form-field>
-
-                            </div>
-                        </div> 
-
-
-                        <div class="row">
-                            <div class="input-title col-md-2 pt-4">
-                                <label class="form-text" for="active">
-                                    Active
-                                </label>
-                            </div>
-                            <div class="input-field  col-md-10">
-                                <input class="form-check-input" type="checkbox" formControlName="active" value="" id="active" >
-
-
-                            </div>
-                        </div> 
-
-
-
-                         <div class="row">
-                            <div class=" input-title col-md-2 pt-4">
-                                <mat-label class="fs-5">Email:</mat-label>
-                            </div>
-                            <div class=" input-field col-md-10">
-                                <mat-form-field appearance="outline">
-                                    <input type="email" class="form-control ms-5" 
-                                        placeholder="name@example.com">
-                                </mat-form-field>
-
-                            </div>
-                        </div>
-                        <div>
-                            <button class="btn btn-primary btn-sm ">
-                                <input type="file" #fileInput id="uploadFile" (change)="uploadImage($event)"
-                                    name="uploadFile" multiple="multiple" accept="image/*" />
-
-                            </button>
-
-                        </div>
-
-                        <div class="mt-3">
-                            <button type="submit" class="btn btn-primary">Send application</button>
-                        </div>
-
-                      
-
-                    </div>
-                </div>
-
-            </div>
-
-</div> -->
+        
+  

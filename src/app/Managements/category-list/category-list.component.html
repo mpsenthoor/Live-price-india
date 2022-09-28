@@ -4,15 +4,16 @@
 <ng-container   >
 <div class="container mt-4" >
 
-
-    <div class="row">
-
-        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+ <div class="row">
+     <div class="col-md-10">
+      
+      <div class="p-2 text-white text-center title-bar">
+        <span class="fs-4">Category List</span>
+      </div>
 
         </div>
-
-        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end">
-            <button mat-raised-button color="primary" (click)="moveToCategoryForm()" >Add Category</button>
+        <div class="col-md-2 d-flex justify-content-end">
+        <button mat-raised-button color="primary" (click)="moveToCategoryForm()" >Add Category</button>
           </div>
     </div>
 
@@ -64,7 +65,7 @@
     <ng-container matColumnDef="Delete"style="width: 10%;">
       <th mat-header-cell *matHeaderCellDef> Delete </th>
       <td mat-cell *matCellDef="let element"> 
-        <button mat-icon-button color="warn"  (click)="deleteCategory(element.category_id)"   >
+        <button mat-icon-button color="warn"  (click)="openConfirmDialog(element.category_id)"   >
           <mat-icon> delete</mat-icon>
         
         </button>

@@ -1,6 +1,11 @@
 table {
     width: 100%;
   }
+
+  .title-bar{
+   background-color: #74b49b !important;
+  }
+
   .mat-header-cell{
   
    background-color: #608b89;

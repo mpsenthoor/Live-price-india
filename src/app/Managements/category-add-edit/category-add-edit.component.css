@@ -4,36 +4,52 @@
     margin-top: 100px;
   } */
 
- .container{
-  margin-top: 100px;
- }
+
   
  .mat-form-field{
-  width: 70%;
+  width: 300px;
+  
+}
+.fw1{
+  font-weight: 500 !important;
+}
+.title-bar{
+  margin-left: -12px !important;
+  width: 86% !important;
+  background-color: #608B89 !important;
 }
 
 .input-title{
-  background-color: bisque;
+  /* background-color: #c2cfd8; */
+  background-color:#CED4DA;
 }
 
 .input-field{
-  background-color: antiquewhite;
+  /* background-color: #f0fbff; */
+  background-color: white;
 }
+
 
 mat-grid-tile{
   border: 1px solid  grey;
+ 
 
+
+}
+
+.pl-1{
+  padding-left: 8% !important;
 }
 
 .btn-remove-image{
   position: absolute;
   cursor: pointer;
-  top: -9px;
+  top: -2px;
   right: -5px;
   background-color: red;
   color: white;
-  border-radius: 50%;
-  width: 20px;
+  border-radius: 60%;
+  width: 15px;
   height: auto;
   text-align: center;
     }
