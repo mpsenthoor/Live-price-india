@@ -9,9 +9,16 @@
  }
   
  .mat-form-field{
-  width: 100%;
+  width: 70%;
 }
 
+.input-title{
+  background-color: bisque;
+}
+
+.input-field{
+  background-color: antiquewhite;
+}
 
 mat-grid-tile{
   border: 1px solid  grey;

@@ -49,6 +49,10 @@ export class ApiServicesService {
     return this.http.post(this.baseUrl,data)
   }
 
+  addProductPriceToApi(data:FormData){
+    return this.http.post(this.baseUrl,data)
+  }
+
 
 }
 

@@ -15,20 +15,21 @@
             </div>
 
 
-            <form   >
+            <form  [formGroup]="productPrice" >
                 <div class="mt-3 p-3">
                     <label class="form-label">Add Price :</label>
 
-                    <input type="number" class="form-control" [formControl]="amountCtrl"   inputWithComma  placeholder="Enter product price..." name="amount">
+                    <input type="number" class="form-control"   inputWithComma  placeholder="Enter product price..." formControlName="productPrice">
 
                 </div>
 
-                <div class="p-1" align="end">
-                    <button type="submit" class="btn  btn-success mt-4 fs-5 rounded-1 d-flex mx-auto btn-sm "><i
-                            class="fa fa-spinner fa-spin"></i>Add Price</button>
-
-                </div>
             </form>
+                <div class="p-1" align="end">
+                    <button type="submit" class="btn  btn-success mt-4 fs-5 rounded-1 d-flex mx-auto btn-sm " (click)="addPrice(ProductId)">
+                          Add Price</button>
+
+                </div>
+           
 
 
 
