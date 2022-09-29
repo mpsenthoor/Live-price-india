@@ -133,7 +133,7 @@ this.notificationService.success('! product added successfully')}
 formData.append("categoryName", this.productForm.controls['categoryName'].value)
 formData.append("ProductName", this.productForm.controls['productName'].value)
 
- formData.append("ProductStatus",(this.productForm.controls['active'].value == true)?'active' : 'inactive')
+ formData.append("ProductStatus",(this.productForm.controls['active'].value == true)?'1' : '0')
 
 formData.append("ProductImage", this.productImage)
 

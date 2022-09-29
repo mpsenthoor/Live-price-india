@@ -54,14 +54,29 @@ export class ApiServicesService {
   }
 
 
+
+
+
+ //  State Post Api  //
+
+
+
+
+ addStateToApi(data:FormData){
+  
+  return this.http.post(this.baseUrl, data)
+}
+
+ //  State list Api //
+
+ getStateList(data:any){
+  return this.http.post(this.baseUrl,data)
 }
 
 
 
-    // Category Get     //
+}
 
-    // getAllCategory(data:any){
-    //   return this.http.post<Category[]>(this.baseUrl,data)
-    // }
+    
 
 

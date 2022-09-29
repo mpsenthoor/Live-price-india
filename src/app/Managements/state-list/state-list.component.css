@@ -1,0 +1,20 @@
+
+table {
+    width: 100%;
+  }
+
+  .title-bar{
+    background-color: #74b49b !important;
+   }
+
+  .active{
+    background: 'white'
+}
+  .mat-header-cell{
+  
+    background-color: #608b89;
+    color: white;
+    font-weight:200;
+    font-family: arial, verdana, sans-serif;
+    font-size:18px;
+   }

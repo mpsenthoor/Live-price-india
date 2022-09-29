@@ -1,0 +1,34 @@
+.mat-form-field{
+    width: 300px;
+    
+  }
+
+  .title-bar{
+    margin-left: -12px !important;
+    width: 86% !important;
+    background-color: #608B89 !important;
+  }
+
+  .fw1{
+    font-weight: 500 !important;
+  }
+
+  .input-title{
+    background-color:#CED4DA;
+  }
+  
+  .input-field{
+    background-color: white;
+  }
+  
+  mat-grid-tile{
+    border: 1px solid  grey;
+   
+  
+  
+  }
+  
+  .pl-1{
+    padding-left: 8% !important;
+  }
+  

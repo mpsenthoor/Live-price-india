@@ -90,7 +90,7 @@ else{
   this.notification.success('! Category added successfully') }
    formData.append("categoryName", this.categoryForm.controls['categoryName'].value)
 
-   formData.append("categoryStatus",(this.categoryForm.controls['active'].value == true)?'active' : 'inactive')
+   formData.append("categoryStatus",(this.categoryForm.controls['active'].value == true)?'1' : '0')
   
    formData.append("categoryImage", this.categoryImage)
 

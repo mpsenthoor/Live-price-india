@@ -15,7 +15,7 @@
 
         <!-- Title-Bar field -->
         <div class="p-2 text-white text-center title-bar">
-          <span class="fs-4">Product Form</span>
+          <span class="fs-4">Product </span>
 
         </div>
 
@@ -35,10 +35,10 @@
             <div class="col-md-6 input-field">
               <div class="mt-3">
                 <mat-form-field appearance="fill">
-                  <mat-label>Category name:</mat-label>
+                  <mat-label> Select Category </mat-label>
                   <mat-select formControlName="categoryName">
 
-                    <mat-option>Category name</mat-option>
+                    <mat-option>Category names</mat-option>
                     <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
 
                   </mat-select>

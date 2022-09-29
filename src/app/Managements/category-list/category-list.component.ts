@@ -49,6 +49,9 @@ export class CategoryListComponent implements OnInit {
 
 categoryList:any
 
+  //  deleteConfirmation : Boolean;
+
+
 imagePath:string="http://geserve-pc-3/livepriceindia/notes/"
 
   ngOnInit(): void {
@@ -72,8 +75,19 @@ imagePath:string="http://geserve-pc-3/livepriceindia/notes/"
   }
 
 
-  openConfirmDialog(id:any){
-    this.deleteService.openConfirmDialog().afterClosed().subscribe()
+  openConfirmDialog(categoryId:any){
+    this.deleteService.openConfirmDialog("Are you sure want to delete this category?")
+    .afterClosed().subscribe(
+      (res:any)=>{
+// console.log(res)
+        // this.deleteConfirmation=res
+       if (res) {
+         this.deleteCategory(categoryId)
+ 
+       }
+
+      }
+    )
   }
 
 
@@ -90,7 +104,7 @@ imagePath:string="http://geserve-pc-3/livepriceindia/notes/"
         this.categoryList=res;
         this.dataSource.data=res;
         
-        alert("Are you sure want to remove this category")
+        // alert("Are you sure want to remove this category")
         location.reload();
 
 this.notification.success('! Category deleted successfully')

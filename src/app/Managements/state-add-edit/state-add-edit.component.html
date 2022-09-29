@@ -1,0 +1,141 @@
+<app-dashboard></app-dashboard>
+
+<div id="adjust1">
+
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+
+            <div class="col-md-8">
+              <div class="p-2 text-white text-center title-bar">
+                            <span class="fs-4">State </span>
+        
+                        </div>
+
+
+              
+                
+                        <!-- <div class="shadow-lg p-3 bg-body rounded-0"> -->
+                            <form  [formGroup]="stateForm" class="mt-2">
+
+                 
+
+                                <div class="row">
+                                    <div class="col-md-4 text-dark input-title">
+                                      <label for="exampleFormControlInput1" class="form-label fs-5 ps-3 pt-3">State Name:</label>
+                    
+                                    </div>
+                                    <div class="col-md-6 input-field">
+                                        <div class="mt-2">
+                                          <mat-form-field appearance="fill">
+                                            <mat-label>State Name:</mat-label>
+                                            <input matInput type="text" formControlName="StateName" placeholder=" " class=""
+                                            required>
+                                              
+                                            
+                                        </mat-form-field>
+                          
+                                       
+                          
+            
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                    
+                    
+                                <div class="row">
+                                        <div class="col-md-4 input-title">
+                    
+                                           
+                    
+                                        </div>
+                                        <div class="col-md-6  input-field" >
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                  <button type="button" class="btn btn-primary text-nowrap mt-3 mb-3" (click)="backToList()">Back to
+                                                    list</button>
+                                            
+                    
+                                                    </div>
+                                                    <!-- <div class="col-md-6 d-flex justify-content-end">
+                                                      <ng-template #addButton>
+            
+                                                      
+                                                       <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addState()">Add
+                                                           State</button>
+                                           
+                                                   </ng-template>
+                               
+                                                   <ng-container *ngIf="formType == 'editState';  else addButton">
+                                                    <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addState()">Update
+                                                        State</button>
+                                        
+                                                </ng-container>
+                    
+                                                    </div> -->
+            
+            
+                                                    <div class="col-md-6 d-flex justify-content-end">
+                                                      <ng-template #addButton>
+                  
+                                                       
+                                                         <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addState()">Add
+                                                             State</button>
+                                             
+                                                     </ng-template>
+                             
+                                                     <ng-container *ngIf="formType == 'editState';  else addButton">
+                                                         <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addState()">Update
+                                                             State</button>
+                                             
+                                                     </ng-container>
+                  
+                                                  </div>
+            
+                    
+                                            </div>
+                    
+                    
+                    
+                                        </div>
+                    
+                                    </div>
+                        
+                               
+                                
+                            </form>
+
+                        <!-- </div> -->
+
+               
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    
+    </div>
+
+
+
+
+     
+
+        
+       
+
+       
+
+        
+  
+

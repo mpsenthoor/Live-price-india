@@ -16,6 +16,8 @@ import { CategoryAddEditComponent } from './Managements/category-add-edit/catego
 import { MaterialModule } from './Material/material.module';
 import { ProductPriceComponent } from './Managements/product-price/product-price.component';
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
+import { StateAddEditComponent } from './Managements/state-add-edit/state-add-edit.component';
+import { StateListComponent } from './Managements/state-list/state-list.component';
 
 
 
@@ -32,6 +34,8 @@ import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.componen
     CategoryAddEditComponent,
     ProductPriceComponent,
     ConfirmDeleteComponent,
+    StateAddEditComponent,
+    StateListComponent,
    
     
   ],
