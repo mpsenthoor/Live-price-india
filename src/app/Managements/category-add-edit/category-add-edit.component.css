@@ -4,14 +4,17 @@
     margin-top: 100px;
   } */
 
-.pos-1{
+.form-position{
   position: absolute;
-  top: 52%;
+  top: 54%;
   left: 67%;
   transform: translate(-50%, -50%);
-  width: 1240px;
+  width: 1240px !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 
 }
+
   
  .mat-form-field{
   width: 300px;

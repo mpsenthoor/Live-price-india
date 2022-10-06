@@ -6,6 +6,11 @@ import { ApiServicesService } from 'src/app/Services/api-services.service';
 import { ProductListComponent } from '../product-list/product-list.component';
 
 
+export interface state {
+  cityName: string;
+  cityId: number;
+}
+
 @Component({
   selector: 'app-product-price',
   templateUrl: './product-price.component.html',
@@ -15,6 +20,8 @@ export class ProductPriceComponent implements OnInit {
 
   productPrice: FormGroup
 
+  states: state[] = []
+
   constructor(
     private fb: FormBuilder,
     private router : Router,
@@ -23,27 +30,37 @@ export class ProductPriceComponent implements OnInit {
     
   ) {
 this.productPrice=this.fb.group({
+  cityName : [''],
   productPrice : ['']
 })
 
    }
+   
    formType:any
 
    ProductId:any
 
   amount:any
   ngOnInit(): void {
-
-   
+    console.log(JSON.stringify(this.dialogRef.id));
+    // console.log(history.state)
+    // this.formType = history.state.action;
+    // if (history.state.action == 'addProduct') {
+    //   this.addPrice(history.state.id);
+    //   this.ProductId = (history.state.id)
+    // }
+    
+   this.getCityName();
   }
 
-addPrice(productId:any){
-  console.log(this.productPrice.value)
+addPrice(){
+  // console.log(this.productPrice.value)
 
   var formData= new FormData();
   formData.append("action","addPrice")
   formData.append("productPrice", this.productPrice.controls['productPrice'].value)
-  formData.append("ProductId",productId)
+  formData.append("cityId", this.productPrice.controls['cityName'].value)
+  formData.append("ProductId",this.dialogRef.id)
 
   this.apiService.addProductPriceToApi(formData).subscribe(
     (res:any)=>{
@@ -53,6 +70,20 @@ addPrice(productId:any){
     }
   )
 }
+
+getCityName(){
+var formData = new FormData();
+formData.append("action","getAllCityList")
+this.apiService.addCityToApi(formData).subscribe(
+  (res:any)=>{
+    // console.log(res)
+    this.states=res
+  }
+)
+
+}
+
+
 
   onClose(){
     this.dialogRef.close();

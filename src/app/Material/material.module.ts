@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 // import { MatButtonModule } from '@angular/material';
 
 
@@ -43,6 +44,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     MatPaginatorModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatAutocompleteModule,
     
     
   ],
@@ -65,6 +67,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     MatPaginatorModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatAutocompleteModule,
   ]
 })
 export class MaterialModule { }

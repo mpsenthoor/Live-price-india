@@ -10,7 +10,9 @@ export class ApiServicesService {
 
   constructor(private http: HttpClient) { }
 
-  baseUrl = "http://geserve-pc-3/livepriceindia/main.php"
+   baseUrl = "http://geserve-pc-3/livepriceindia/main.php"
+
+  
 
   //  loginUrl="http://geserve-pc-3/livepriceindia/main/login.php"
 
@@ -73,6 +75,16 @@ export class ApiServicesService {
   return this.http.post(this.baseUrl,data)
 }
 
+
+//   City Post api //
+
+addCityToApi(data:FormData){
+  return this.http.post(this.baseUrl,data)
+}
+
+getPriceHistory(data: FormData){
+  return this.http.post(this.baseUrl, data)
+}
 
 
 }

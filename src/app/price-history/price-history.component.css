@@ -1,0 +1,23 @@
+.txt{
+    margin-left: -85px !important;
+}
+
+.title-2{
+padding-top: 2px;
+}
+.space{
+    margin-top: -3px !important;
+}
+
+.title-bar{
+    background-color: black
+   }
+
+.mat-header-cell{
+  
+    background-color: #608b89;
+    color: white;
+    font-weight:200;
+    font-family: arial, verdana, sans-serif;
+    font-size:18px;
+   }

@@ -1,6 +1,7 @@
  import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component';
+import { ProductPriceComponent } from '../Managements/product-price/product-price.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class DeleteServiceService {
 
   openConfirmDialog(msg:any){
     return this.dialog.open(ConfirmDeleteComponent,{
-      width:"300px",
+      width:"30%",
       panelClass:'borderless-dialog',
       disableClose: true,
       data:{
@@ -22,4 +23,17 @@ export class DeleteServiceService {
       }
     })
   }
+
+  // openAddPriceDialog() {
+
+  //       this.dialog.open(ProductPriceComponent, {
+  //         width:'30%',
+  //         panelClass:'borderless-dialog',
+  //         disableClose: true,
+  //         autoFocus:true,
+         
+          
+  //       }) 
+  //     }  
+  
 }

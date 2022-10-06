@@ -1,0 +1,86 @@
+<div class="container mt-2">
+
+    <div class="p-1 fs-5 bg-primary  text-center text-white"> Price history..
+
+      <button class="btn-dialog-close  " style="margin-left: 40%; margin-top: -3%;"  (click)="onClose()" mat mat-stroked-button tabindex="-1" >
+        <mat-icon>clear </mat-icon>
+    </button>
+      
+    </div>
+
+        <div class=" bg-dark text-white pt-0" >
+    <div class="row"  >
+        <div class="col-md-6 p-2 ms-2 ">
+            <span class="text-white">Category name :</span>
+
+        </div>
+        <div class="col-md-6 p-2 txt ">
+            <span class="text-white">Mobiles</span>
+
+        </div>
+        
+
+        <hr>
+
+        <!-- <div class="row"  >
+            <div class="col-md-6 p-1 ms-3 ">
+                <span class="text-white">Product name :</span>
+    
+            </div>
+            <div class="col-md-6 p-1 txt ">
+                <span class="text-white">Apple</span>
+    
+            </div> -->
+
+        <span class="col-md-6 space pb-2 ps-3 ">
+           <span class="text-white">Product name :</span>
+
+        </span>
+        <span class="col-md-6 space pb-3 ps-3 txt">
+            <span class="text-white">Samsung</span>
+
+        </span>
+
+    <!-- </div> -->
+
+</div>
+           
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef> Product price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.productPrice}} </mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <!-- <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    </ng-container> -->
+  
+    <!-- Symbol Column -->
+    <!-- <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    </ng-container> -->
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <!-- <mat-paginator  [pageSize]="30" aria-label="Select page of GitHub search results"></mat-paginator> -->
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+
+</div>

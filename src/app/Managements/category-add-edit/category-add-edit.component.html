@@ -4,8 +4,8 @@
 
 
 
-    <div class="container mt-5">
-        <div class="pos-1">
+    <div class="container mt-4">
+        <div class="form-position">
 
             
             <div class="p-2 text-white text-center title-bar">
@@ -13,7 +13,7 @@
             </div>
 
             
-            <form  [formGroup]="categoryForm" class="mt-2">
+            <form  [formGroup]="categoryForm"  (ngSubmit)="categoryForm.valid && addCategory()" class="mt-2">
 
                 <div class="row">
                     <div class="col-md-2 text-dark input-title">
@@ -29,6 +29,11 @@
                                   
                                 
                             </mat-form-field>
+                            <!-- <span class="text-danger"
+                  *ngIf=" (categoryForm.get('categoryName')?.touched || submitted) && categoryForm.get('categoryName')?.errors?.['required']"> -->
+                  <span class="text-danger"  *ngIf="submitted && categoryForm.get('categoryName')?.errors?.['required']">
+                  *Category name is required
+                            </span>
 
                         </div>
                       
@@ -130,13 +135,13 @@
     
                                             <!-- <button type="submit" class="btn btn-success " (click)="addCategory() ">Add
                            Category</button> -->
-                                           <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addCategory()">Add
+                                           <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="submitted=true" >Add
                                                Category</button>
                                
                                        </ng-template>
                
                                        <ng-container *ngIf="formType == 'editCategory';  else addButton">
-                                           <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="addCategory()">Update
+                                           <button type="submit" class="btn btn-success text-nowrap mt-3 mb-3" (click)="submitted=true" >Update
                                                Category</button>
                                
                                        </ng-container>
@@ -157,19 +162,6 @@
 
         </div>
        
-            
-
-          
-
-
-              
-                
-
-
-
-            
-
-
        
 
 

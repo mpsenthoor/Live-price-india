@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
 
 
 
@@ -53,3 +54,4 @@ snack-bar-container.notification.simple-snack-bar{
     font-size: 22px !important;
     font-weight: bold;
 }
+

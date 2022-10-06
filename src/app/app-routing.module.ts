@@ -9,6 +9,8 @@ import { CategoryListComponent } from './Managements/category-list/category-list
 import { CategoryAddEditComponent } from './Managements/category-add-edit/category-add-edit.component';
 import { StateAddEditComponent } from './Managements/state-add-edit/state-add-edit.component';
 import { StateListComponent } from './Managements/state-list/state-list.component';
+import { CityAddEditComponent } from './city-add-edit/city-add-edit.component';
+import { CityListComponent } from './city-list/city-list.component';
 
 const routes: Routes = [
   { path : "login",         title : "Login-Live price india"  ,          component : LoginComponent },
@@ -18,8 +20,10 @@ const routes: Routes = [
   { path : "product",       title : "Product-Live price india"  ,        component : ProductAddEditComponent },
   { path : "categoryList",  title : "Category-List-Live price india"  ,  component : CategoryListComponent },
   { path : "category",      title : "Category-Live price india"  ,       component : CategoryAddEditComponent },
-  { path : "state",      title : "State-Live price india"  ,       component : StateAddEditComponent },
-  { path : "statelist",      title : "State-Live price india"  ,       component : StateListComponent },
+  { path : "state",         title : "State-Live price india"  ,          component : StateAddEditComponent },
+  { path : "stateList",     title : "State-Live price india"  ,          component : StateListComponent },
+  { path : "city",          title : "City-Live price india"  ,           component : CityAddEditComponent },
+  { path : "cityList",      title : "City-Live price india"  ,           component : CityListComponent },
   
   ];
 

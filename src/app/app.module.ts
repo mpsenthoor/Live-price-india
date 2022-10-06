@@ -18,7 +18,11 @@ import { ProductPriceComponent } from './Managements/product-price/product-price
 import { ConfirmDeleteComponent } from './confirm-delete/confirm-delete.component';
 import { StateAddEditComponent } from './Managements/state-add-edit/state-add-edit.component';
 import { StateListComponent } from './Managements/state-list/state-list.component';
-
+import { PriceHistoryComponent } from './price-history/price-history.component';
+import { CityAddEditComponent } from './city-add-edit/city-add-edit.component';
+import { CityListComponent } from './city-list/city-list.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -36,6 +40,13 @@ import { StateListComponent } from './Managements/state-list/state-list.componen
     ConfirmDeleteComponent,
     StateAddEditComponent,
     StateListComponent,
+    PriceHistoryComponent,
+    CityAddEditComponent,
+    CityListComponent,
+    
+  
+    
+    
    
     
   ],
@@ -47,6 +58,8 @@ import { StateListComponent } from './Managements/state-list/state-list.componen
     HttpClientModule,
     AppRoutingModule,
     MaterialModule,
+    NgSelectModule,
+    Ng2SearchPipeModule,
    
     
    

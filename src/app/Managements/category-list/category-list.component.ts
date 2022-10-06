@@ -76,7 +76,7 @@ imagePath:string="http://geserve-pc-3/livepriceindia/notes/"
 
 
   openConfirmDialog(categoryId:any){
-    this.deleteService.openConfirmDialog("Are you sure want to delete this category?")
+    this.deleteService.openConfirmDialog("Are you sure want to remove this category permanently ?")
     .afterClosed().subscribe(
       (res:any)=>{
 // console.log(res)

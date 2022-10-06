@@ -7,9 +7,19 @@
 table {
     width: 100%;
   }
+  .inner-addon .just-icon {
+    position: absolute;
+    pointer-events: none;
+  }
+  .just-icon{
+    margin-left: 120px !important;
+  }
 
   .title-bar{
     background-color: #74b49b !important;
+    font-weight:bold;
+   font-family:  sans-serif;
+   font-size:14px;
    }
 
   .active{
@@ -19,7 +29,28 @@ table {
   
     background-color: #608b89;
     color: white;
-    font-weight:200;
-    font-family: arial, verdana, sans-serif;
-    font-size:18px;
+    font-weight:100;
+    font-family:  sans-serif;
+    font-size:14px;
    }
+   .mat-cell{
+    text-transform:capitalize ;
+    font-size: 14px;
+  }
+
+.tooltip{
+ 
+  overflow: auto;
+  border: 1px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+} 
+
+.ng-select#province {
+  border:0px;
+  min-height: 0px;
+  border-radius: 0;
+}
