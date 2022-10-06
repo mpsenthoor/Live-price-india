@@ -91,7 +91,7 @@
 
          <!-- Upload CSV file field -->
          <div class="col-md-4 ">
-          <form>
+          <form  [formGroup]="csvForm" >
 
           <!-- <div class="col-md-3 " style="margin-left:60px ;">
             <input class="form-control" type="file"  
@@ -103,8 +103,8 @@
 
 
           <div class="input-group">
-            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-            <button class="btn btn-success" type="button" id="inputGroupFileAddon04">Upload</button>
+            <input type="file" class="form-control" formControlName="csvFile"  multiple="multiple" (change)="onChangeCity($event)">
+            <button class="btn btn-success" type="button" (click)=" onUploadCity()" >Upload</button>
           </div>
 
         </form>
@@ -118,7 +118,7 @@
   
        <!--City List Starts  -->
 
-<div class="mat-elevation-z8 mt-3">
+<div class="mat-elevation-z8 mt-2">
     <table mat-table [dataSource]="dataSource">
   
       <!-- ProductId Column -->
@@ -157,20 +157,20 @@
       </ng-container>
 
       <!-- Product Price Column -->
-
+<!-- 
       <ng-container matColumnDef="price">
         <th mat-header-cell *matHeaderCellDef> Price </th>
         <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-        <!-- |currency:"INR":"symbol" -->
-      </ng-container>
+        |currency:"INR":"symbol"
+      </ng-container> -->
 
 
 <!-- Product Date Column -->
 
-<ng-container matColumnDef="date">
+<!-- <ng-container matColumnDef="date">
   <th mat-header-cell *matHeaderCellDef> Date </th>
   <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-</ng-container>
+</ng-container> -->
 
 
 <!-- Product Add Price Column -->
@@ -251,3 +251,32 @@ Add Price
 </ng-container>
 
 </div>
+
+
+
+<!-- <div class="row bg-dark text-white pt-0 border border-warning border-top-0 border-start-0 border-end-0 ms-1 me-1 p-1 ">
+  <div class="col-md-6 pt-2">
+      <span class="text-white text-nowrap">Category name :</span>
+
+  </div>
+  <div class="col-md-6 pt-2 d-flex justify-content-end txt">
+      <span class="text-white text-nowrap txt">Mobiles</span>
+
+  </div>
+  </div>
+  
+
+ 
+  <div class="row bg-dark text-white pt-0 ms-1 me-1 p-1">
+  <div class="col-md-6 pt-2">
+    <span class="text-white text-nowrap">Product name :</span>
+
+</div>
+<div class="col-md-6 pt-2 d-flex justify-content-end">
+    <span class="text-white text-nowrap">Apple</span>
+
+</div>
+</div> -->
+
+  
+  

@@ -68,7 +68,7 @@ selectCategoryId:any
   ngOnInit(): void {
     this.getCategoryName()
     // this.handleOptionChange()
-    console.log(history.state)
+    // console.log(history.state)
     this.formType = history.state.action;
     if (history.state.action == 'editProduct') {
       this.editProductData(history.state.id);

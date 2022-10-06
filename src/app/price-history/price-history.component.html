@@ -1,6 +1,6 @@
-<div class="container mt-2">
+<!-- <div class="container mt-2"> -->
 
-    <div class="p-1 fs-5 bg-primary  text-center text-white"> Price history..
+    <div class="p-1 fs-5 bg-primary  text-center text-white  ms-1 me-1 mt-1"> Price history..
 
       <button class="btn-dialog-close  " style="margin-left: 40%; margin-top: -3%;"  (click)="onClose()" mat mat-stroked-button tabindex="-1" >
         <mat-icon>clear </mat-icon>
@@ -8,45 +8,47 @@
       
     </div>
 
-        <div class=" bg-dark text-white pt-0" >
-    <div class="row"  >
-        <div class="col-md-6 p-2 ms-2 ">
-            <span class="text-white">Category name :</span>
+       
+  
+      <div class="row bg-dark text-white pt-0 border border-light border-top-0 border-start-0 border-end-0 ms-1 me-1 " >
+        <div class="col-md-6 pt-2">
+            <span class="text-white text-nowrap">Category name :</span>
 
         </div>
-        <div class="col-md-6 p-2 txt ">
-            <span class="text-white">Mobiles</span>
+        <div class="col-md-6 pt-2 txt">
+            <span class="text-white text-nowrap">Mobiles</span>
 
+        </div>
         </div>
         
 
-        <hr>
+       
+        <div class="row bg-dark text-white pt-0 ms-1 me-1 ">
+        <div class="col-md-6 pt-2">
+          <span class="text-white text-nowrap">Product name :</span>
 
-        <!-- <div class="row"  >
-            <div class="col-md-6 p-1 ms-3 ">
-                <span class="text-white">Product name :</span>
-    
-            </div>
-            <div class="col-md-6 p-1 txt ">
-                <span class="text-white">Apple</span>
-    
-            </div> -->
+      </div>
+      <div class="col-md-6 pt-2 txt">
+          <span class="text-white text-nowrap">Apple</span>
 
-        <span class="col-md-6 space pb-2 ps-3 ">
-           <span class="text-white">Product name :</span>
+      </div>
+      </div>
+      
+        <form>
+          <div class="  pt-0 ms-1 me-1 ">
+      <ng-select  class="custom"
+      placeholder="Select city"
+      
+         
+         [searchable]="true" 
+          [items]="cities" bindLabel="cityName" bindValue="cityId" style="text-transform:capitalize ;">
+    </ng-select>
+    </div>
 
-        </span>
-        <span class="col-md-6 space pb-3 ps-3 txt">
-            <span class="text-white">Samsung</span>
-
-        </span>
-
-    <!-- </div> -->
-
-</div>
+  </form>
            
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8 ms-1 me-1 ">
     <!-- Position Column -->
     <ng-container matColumnDef="price">
       <mat-header-cell *matHeaderCellDef> Product price </mat-header-cell>
@@ -83,4 +85,4 @@
   </mat-paginator>
 
 
-</div>
+<!-- </div> -->

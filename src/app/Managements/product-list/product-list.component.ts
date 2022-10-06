@@ -11,7 +11,7 @@ import { ProductPriceComponent } from '../product-price/product-price.component'
 import { ViewEncapsulation } from '@angular/core';
 import { NotificationsService } from 'src/app/Notification/notifications.service';
 import { PriceHistoryComponent } from 'src/app/price-history/price-history.component';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
 import { DeleteServiceService } from 'src/app/Delete-service/delete-service.service';
 import * as _ from 'lodash';
@@ -69,7 +69,7 @@ export class ProductListComponent implements OnInit {
 
 
 
-  displayedColumns: string[] = ['categoryName', 'productName', 'productStatus', 'productImage', 'price', 'date', 'addPrice', 'priceHistory', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['categoryName', 'productName', 'productStatus', 'productImage', 'addPrice', 'priceHistory', 'Edit', 'Delete'];
   dataSource = new MatTableDataSource<ProductDataForm>(productList);
 
 
@@ -93,8 +93,11 @@ export class ProductListComponent implements OnInit {
   formData: any
 
   cityFile: any;
+  csvFile:any
   cityFileSource: any
 
+  
+  csvForm:FormGroup
   filterForm: FormGroup
 
   constructor(
@@ -106,10 +109,12 @@ export class ProductListComponent implements OnInit {
     private deleteService: DeleteServiceService,
     private config: NgSelectConfig,
   ) {
-
-    this.config.notFoundText = 'Custom not found';
-    this.config.appendTo = 'body';
-    this.config.bindValue = 'value';
+this.csvForm= this.fb.group({
+  csvFile:['']
+})
+    // this.config.notFoundText = 'Custom not found';
+    // this.config.appendTo = 'body';
+    // this.config.bindValue = 'value';
   }
 
 
@@ -154,8 +159,9 @@ export class ProductListComponent implements OnInit {
   }
 
   onChangeCity(event: any) {
-    this.cityFile = event.target.files[0];
-    // console.log(this.productImage)
+    // console.log(event.target.files)
+    this.csvFile = event.target.files[0];
+    // console.log(this.csvFile)
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
 
@@ -168,7 +174,16 @@ export class ProductListComponent implements OnInit {
 
 
   onUploadCity() {
+  
+var formData = new FormData();
+formData.append("action","priceImportCSV");
+formData.append("upldCsv",this.csvFile)
 
+this.apiService.addCityToApi(formData).subscribe(
+  (res:any)=>{
+    console.log(res)
+  }
+)
   }
 
   moveToProductForm() {
@@ -190,7 +205,7 @@ export class ProductListComponent implements OnInit {
     this.apiService.getProductList(formData).subscribe(
 
       (res: any) => {
-        // console.log(res)
+         console.log(res)
         this.productList = res;
         this.dataSource.data = res
 
@@ -201,6 +216,11 @@ export class ProductListComponent implements OnInit {
       }
     )
   }
+
+  get f(): { [key: string]: AbstractControl } {
+    return this.csvForm.controls;
+  }
+
 
 
   deleteProduct(ProductId: any) {
@@ -257,7 +277,7 @@ export class ProductListComponent implements OnInit {
       panelClass: 'borderless-dialog',
       disableClose: true,
       autoFocus: true,
-      id :'{"price":"12","catname":"furniture"}',
+      id :'{"categoryName":"12","ProductName":"furniture"}',
     })
   }
 

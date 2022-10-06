@@ -13,6 +13,11 @@ export interface PeriodicElement {
   symbol: string;
 }
 
+export interface city {
+  cityName: string;
+  cityId: number;
+}
+
 const ELEMENT_DATA: PeriodicElement[] = [];
   
 
@@ -22,6 +27,8 @@ const ELEMENT_DATA: PeriodicElement[] = [];
   styleUrls: ['./price-history.component.css']
 })
 export class PriceHistoryComponent implements OnInit {
+
+  cities: city[] = []
 
   displayedColumns: string[] = ['price', 'date'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -39,10 +46,23 @@ private apiService : ApiServicesService,
   ) { }
 
   ngOnInit(): void {
-    console.log(JSON.stringify(this.dialogRef.id))
+    // console.log(JSON.stringify(this.dialogRef.id))
+    this.getCityName();
     this.priceHistoryList();
     
   }
+
+  getCityName(){
+    var formData = new FormData();
+    formData.append("action","getAllCityList")
+    this.apiService.addCityToApi(formData).subscribe(
+      (res:any)=>{
+        // console.log(res)
+        this.cities=res
+      }
+    )
+    
+    }
 
 
   priceHistoryList(){

@@ -21,3 +21,13 @@ padding-top: 2px;
     font-family: arial, verdana, sans-serif;
     font-size:18px;
    }
+
+   .ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 10px;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+}
